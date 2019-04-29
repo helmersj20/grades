@@ -14,8 +14,64 @@ public class Main {
   }
 
   private static String processGrades(Scanner scanner) {
-
-    return null;
+    int total_Classes = 0;
+    double total_GPA =0;
+    double GPA = 0;
+    String grade = "";
+    while(scanner.hasNextLine()){
+      total_Classes += 1;
+      scanner.next();
+      scanner.next();
+      grade = scanner.next();
+      if(grade.equals("A"))
+      {
+        GPA = 4.00;
+      }
+      if(grade.equals("A-"))
+      {
+        GPA = 3.67;
+      }
+      if(grade.equals("B+"))
+      {
+        GPA = 3.33;
+      }
+      if(grade.equals("B"))
+      {
+        GPA = 3.00;
+      }
+      if(grade.equals("B-"))
+      {
+        GPA = 2.67;
+      }
+      if(grade.equals("C+"))
+      {
+        GPA = 2.33;
+      }
+      if(grade.equals("C"))
+      {
+        GPA = 2.00;
+      }
+      if(grade.equals("C-"))
+      {
+        GPA = 1.67;
+      }
+      if(grade.equals("D+"))
+      {
+        GPA = 1.33;
+      }
+      if(grade.equals("D"))
+      {
+        GPA = 1.00;
+      }
+      if(grade.equals("F"))
+      {
+        GPA = 0.00;
+      }
+      total_GPA = (GPA + total_GPA)/total_Classes;
+      scanner.nextLine();
+    }
+    String report = String.format("Courses: " + total_Classes + "\nGPA: %.2f\n", total_GPA);
+    return report;
   }
 
   @Test
